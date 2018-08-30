@@ -1,0 +1,27 @@
+/********
+FOOTER
+*******/
+
+.footer{
+    padding: 5%;
+    background-color: $color_footer_background;
+}
+
+.footer_wow{
+    border-right-style: solid;
+    border-right-color: $color_footer_border;
+}
+
+.footer_title{
+    color: $color_title_article; 
+}
+
+.footer_content{
+    color: $color_text;
+    text-align: justify;
+    font-size: 0.8em;
+}
+
+.footer_liste{
+    color: $color_text;
+}

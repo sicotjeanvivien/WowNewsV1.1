@@ -1,0 +1,30 @@
+/*************
+TEMPLATE_HORDE
+**************/
+
+
+.template_horde{
+    width: 20%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+    background-image: linear-gradient(to top,  $color_horde, $color_horde 60%,  $color_background_op );
+}
+
+.banner_horde{
+    width: 100%;
+    height: 100%;
+   
+}
+
+.banner_horde_image{
+    width: 100%;
+    height: auto;
+}
+
+.gif_sylvanas{
+    width: 100%;
+    height: auto;
+
+}

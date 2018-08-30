@@ -1,0 +1,36 @@
+/*****
+ASIDE
+*****/
+
+.aside{
+    position: fixed;
+    top: 1%;
+    right: 1%;
+    z-index: 100;
+    padding: 1%;
+    width: 15%;
+    height: auto;
+    border-radius: 1em;
+    background-color: $color_aside_background;
+}
+
+.button_gestion_user{
+    background-color: $color_button_user;
+    margin: 2%;
+    padding: 1%;
+    text-decoration: none;
+    border-radius: 0.5em ;
+    color: $color_text;
+    font-size: 1.20em;
+}
+
+.aside_login{
+    color: $color_text;
+   
+}
+
+.aside_gestion_login{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -1,0 +1,62 @@
+/*********
+ARTICLES
+********/
+.article{
+    background-color: $color_article_background;
+    padding: 2% 0 2% 0 ;
+
+}
+
+.article_title{
+    color: $color_title_article ;
+    font-size: 3em;
+    text-align: center;
+}
+
+.article_img{
+    width: 80%;
+    margin: 0% 10% 0% 10%;
+}
+
+.article_content{
+    color: $color_text ;
+    margin: 5%;
+    font-size: 1.5em;
+}
+
+.commentaries{
+    width: 100%;
+    margin-top: 3%;
+    padding: 3% 0 3% 0 ;
+    background-color: $color_article_background ;
+}
+
+.commentaries_liste_one_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: $color_text;
+    background-color: $color_background_commentaries;
+    margin: 1%;
+    padding: 1%;
+}
+
+.commentaries_liste_one{
+    margin: 1%;
+    padding: 1% 3% 1% 3%;
+    background-color: $color_background_commentaries ;
+}
+
+
+
+.commentaries_liste_one_content{
+    color: $color_text;
+    margin: 1%;
+    padding: 1%;
+    font-size: 1.1em;
+    background-color: $color_background_commentaries ;
+}
+
+.commentaries_liste_one_user{
+    color: $color_title_article;
+}

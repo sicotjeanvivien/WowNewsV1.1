@@ -1,0 +1,62 @@
+/*****
+HOME
+******/
+
+.home_font_img {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    height: initial;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: $color_background;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo_button {
+    display: contents;
+    width: 100%;
+}
+
+.home_logo_img {
+    width: 40%;
+    height: auto;
+}
+
+.home_block_button{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.home_choise{
+    font-size: 3.33em;
+    color: $color_text;
+}
+
+.home_bouton {
+    font-size: 2.33em;
+    width: auto;
+    border: none;
+    color: $color_text;
+    text-decoration: none;
+}
+
+
+.color_horde{
+    background-color: $color_horde_op;
+}
+
+.color_horde:hover{
+    background-color: $color_horde_opmin;
+}
+
+.color_alliance{
+    background-color: $color_alliance_op;
+}
+
+.color_alliance:hover{
+    background-color: $color_alliance_opmin;
+}

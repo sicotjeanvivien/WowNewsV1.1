@@ -1,0 +1,15 @@
+wow_news_homepage:
+    path:     /home
+    defaults: { _controller: WowNewsBundle:Default:home }
+
+wow_news_accueil:
+    path:     /accueil
+    defaults: { _controller: WowNewsBundle:Default:accueil }
+
+wow_news_accueil_template:
+    path:     /accueil/{template}
+    defaults: { _controller: WowNewsBundle:Default:accueilTemplate }
+
+wow_news_article:
+    path:     /article/{template}/{id}
+    defaults: { _controller: WowNewsBundle:Default:article }

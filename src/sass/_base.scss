@@ -1,0 +1,66 @@
+/*****
+BASE
+*****/
+a{
+    text-decoration: none;
+}
+.body_base{
+    background-image: url("https://www.mamytwink.com/css/images/fond.jpg");
+    background-color: $color_background;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.section{
+
+    display: flex;
+    flex-direction: row;
+}
+
+.content_60{
+    width:60%;
+    padding-bottom: 5%;
+    
+}
+
+.content_100{
+    width: 98%;
+    margin: 1%;
+    padding-bottom: 5%;
+   
+}
+
+.layout_page{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    color: $color_text;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-image: linear-gradient(to top $color_background, $color_background_op);
+    
+}
+
+.layout_page_login{
+    display: flex;
+    flex-direction: column;
+    color: $color_text;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.layout_remenber_me{
+    display: block;
+}
+
+.layout_input{
+    color: black;
+}
+
+.profil_wownews{
+    width: 100%;
+}
+
+

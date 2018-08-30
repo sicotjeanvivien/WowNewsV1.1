@@ -1,0 +1,57 @@
+{% extends '@WowNews/Default/base.html.twig' %}
+
+{% block title %}{{article.title}}{% endblock %}
+
+{% block content %}
+    <article class='article'>
+        <h2 class='article_title'>{{article.title}}</h2>
+        <p class='article_content'>{{article.intro}}</p>
+        <img class='article_img' src={{asset('assets/image/'~article.image.image~'')}}>
+        <div class='article_content'>{{article.content|raw}}</div>
+    </article>
+
+{% endblock %}
+
+{% block body %}
+
+    <section class='copntainer-fluid commentaries'>
+        <div class='container'>
+            {% if app.user  %}
+                <div>
+                    {{ form_start(formView) }}
+                    {% form_theme formView 'bootstrap_4_layout.html.twig' %}
+
+                            {{ form_row (formView.content, {
+                                'attr': {
+                                    'placeholder': 'Commentaires' 
+                                    },
+                                'label': 'Commentaires',
+                                'label_attr': {
+                                    'class': 'article_title'
+                                    },
+                                    }) }}
+                            {{ form_row (formView.submit, { 'label': 'commenter' }) }}
+                        
+                    {{ form_end(formView) }}
+
+                </div>
+            {% else %}
+                <p class='commentaries_text'>Pour laisser un commentaire <a class='button_gestion_user' href={{path( "fos_user_security_login")}}>connecte-toi</a></p>
+            {% endif %}
+        </div>
+        <div class='container'>
+            
+            {% for commentaire in commentaires %}
+                    <div class='row commentaries_liste_one'>
+                        <div class='col-12 commentaries_liste_one_info'>
+                            <h3 class='commentaries_liste_one_user'>{{commentaire.user.username}}</h3>
+                            <P class=''>date de publication: {{commentaire.datePublished.date|date("m/d/Y")}}</p>
+                        </div>
+                        <p class='col-12 commentaries_liste_one_content'>{{commentaire.content}}</p>
+                    </div>
+            {% endfor %}
+
+        </div>
+    </section>
+
+{% endblock %}

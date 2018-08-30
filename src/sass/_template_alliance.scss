@@ -1,0 +1,30 @@
+/****************
+TEMPLATE_ALLIANCE
+*****************/
+
+
+.template_alliance{
+    width: 20%;
+    height: inherit;  
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+    background-image: linear-gradient(to top,  $color_alliance, $color_alliance 60%, $color_background_op );
+}
+.banner_alliance{
+    width: 100%;
+    height: 100%;
+  
+}
+
+.banner_alliance_image{
+    width: 100%;
+    height: auto;
+    
+}
+
+.gif_sylvanas{
+    width: 100%;
+    height: auto;
+
+}
