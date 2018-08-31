@@ -7,7 +7,10 @@
 
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
           integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+
     <link rel="stylesheet" href={{ asset('assets/css/style.css')}} >
 
 
@@ -28,7 +31,7 @@
                     <img class="button_return_accueil" src={{asset('assets/image/logo.png')}} alt="logo"> 
                 </a>
             </div>
-                <div class='home_block_button col-12 justify-content-md-center'>
+                <div class='home_block_button col-12 justify-content-md-center resp_display_none'>
                     <a href="{{path ('wow_news_accueil_template', {'template' : 'horde'})}}">
                         <button type="button" class="btn btn-dark home_bouton color_horde">Horde</button>
                     </a>
@@ -42,41 +45,67 @@
         </div>
     </header>
 
-    <aside class='aside'>
+    <aside class='aside resp_display_none aside_color'>
         {% if app.user  %}
-    
-            <p class='aside_login'>hello {{ app.user.username}}, tu es bien connecté.  </p>
+            <p class='aside_login'>Salutation aventurier,  {{ app.user.username}}</p>
             <div class='aside_gestion_login'>
                 <a class='button_gestion_user' href={{path( "fos_user_security_logout")}}>Déconnexion</a>
-
                 {% if app.user.roles.0 == 'ROLE_ADMIN' %}
-                <a class='button_gestion_user' href={{path( "easyadmin")}}>admin</a>
+                    <a class='button_gestion_user' href={{path( "easyadmin")}}>Admin</a>
                 {% else %}
-                <a class='button_gestion_user' href={{path( "fos_user_profile_show")}}>Profile</a>
+                    <a class='button_gestion_user' href={{path( "fos_user_profile_show")}}>Profile</a>
                 {% endif %}
-
             </div>
-
         {% else %} 
             <div class='aside_gestion_login'>
                 <a class='button_gestion_user' href={{path( "fos_user_security_login")}}>connexion</a>
                 <a class='button_gestion_user' href={{path( "fos_user_registration_register")}}>inscription</a>
             </div>
         {% endif %}
-
     </aside>
+
+    <div class='aside display_none_tablette '>
+         {% if app.user  %}
+            <div class="dropdown ">
+            <button class="btn aside_color btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <i class="fas fa-user"></i>
+            </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class='dropdown-item' href={{path( "fos_user_security_logout")}}>Déconnexion</a>
+                    {% if app.user.roles.0 == 'ROLE_ADMIN' %}
+                        <a class='dropdown-item' href={{path( "easyadmin")}}>admin</a>
+                    {% else %}
+                        <a class='dropdown-item' href={{path( "fos_user_profile_show")}}>Profile</a>
+                    {% endif %}
+                </div>
+        </div>
+        {% else %} 
+            <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user"></i>
+            </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href={{path( "fos_user_security_login")}}>connexion</a>
+                    <a class="dropdown-item" href={{path( "fos_user_registration_register")}}>inscription</a>
+                </div>
+        </div>
+        {% endif %}
+
+    
+    
+    </div>
 
     <section class='container-fluid section'>
         
         {% if template  is defined and (template == 'horde' or template == 'guerre') %}
-        <div class='template_horde'>
+        <div class='template_horde resp_display_none'>
             <div class='banner_horde'>
                     <img class='gif_sylvanas' src= {{ asset('assets/image/sylvanas.gif')}}>
             </div>
             <img class='banner_horde_image' src= {{ asset('assets/image/horde_banner.jpg')}}>
         </div>
         {% elseif template is defined and template == 'alliance' %}
-        <div class='template_alliance'>
+        <div class='template_alliance resp_display_none'>
             <div class='banner_alliance'>
                <img class='gif_sylvanas' src= {{ asset('assets/image/paladin.gif')}}>
             </div>
@@ -86,11 +115,11 @@
 
         <div
          {% if template is defined and (template == 'horde' or template == 'guerre') %}
-         class ='content_60'
+         class ='content_60 resp_max_width'
          {% elseif template is defined and template == 'alliance' %}
-         class='content_60'
+         class='content_60 resp_max_width'
          {% else %}
-         class = 'content_100'  
+         class = 'content_100 resp_max_width'  
          {% endif %}>
 
                 {% block content %}{% endblock %}
@@ -102,15 +131,15 @@
         </div>
 
         {% if template is defined and (template == 'alliance' or template == 'guerre') %}
-        <div class='template_alliance'>
+        <div class='template_alliance resp_display_none'>
             <div class='banner_alliance'>
                 <img class='gif_sylvanas' src= {{ asset('assets/image/jaina.gif')}}>
             </div>
             <img class='banner_alliance_image' src= {{ asset('assets/image/alliance_banner.png')}}>
         </div>
         {% elseif template  is defined and template == 'horde' %}
-        <div class='template_horde'>
-            <div class='banner_horde'>
+        <div class='template_horde resp_display_none'>
+            <div class='banner_horde '>
                 <img class='gif_sylvanas' src= {{ asset('assets/image/thrall.gif')}}>
             </div>
             <img class='banner_horde_image' src= {{ asset('assets/image/horde_banner.jpg')}}>
@@ -118,7 +147,7 @@
         {% endif %}
     </section>
 
-    <footer class='container-fluid footer'>
+    <footer class=' resp_display_none container-fluid footer '>
         <div class='container'>
             <div class='row'>
                 <div class='col-4 footer_wow'>

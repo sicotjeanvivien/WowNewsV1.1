@@ -11,8 +11,12 @@ ASIDE
     width: 15%;
     height: auto;
     border-radius: 1em;
+}
+
+.aside_color{
     background-color: $color_aside_background;
 }
+
 
 .button_gestion_user{
     background-color: $color_button_user;
@@ -21,12 +25,12 @@ ASIDE
     text-decoration: none;
     border-radius: 0.5em ;
     color: $color_text;
-    font-size: 1.20em;
+    font-size: 1.0em;
 }
 
 .aside_login{
-    color: $color_text;
-   
+    color: black;
+    margin: 0;
 }
 
 .aside_gestion_login{

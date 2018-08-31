@@ -1,0 +1,28 @@
+@media (max-width: 768px) {
+    .resp_display_none {
+      display: none;
+    }
+
+    .resp_max_width{
+        width: 100%;
+    }
+
+    .resp_title{
+        font-size: 1.0em;
+    }
+
+}
+
+@media (min-width: 769px) {
+    .display_none_tablette{
+        display: none;
+    }
+
+}
+
+@media (max-width:425px) {
+    .display_none_phone{
+        display: none;
+    }
+
+}

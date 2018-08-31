@@ -36,16 +36,16 @@
 
                 </div>
             {% else %}
-                <p class='commentaries_text'>Pour laisser un commentaire <a class='button_gestion_user' href={{path( "fos_user_security_login")}}>connecte-toi</a></p>
+                <p class='commentaries_text'>Pour laisser un commentaire<a class='button_gestion_user' href={{path( "fos_user_security_login")}}>connecte-toi</a></p>
             {% endif %}
         </div>
-        <div class='container'>
+        <div class='container mg_top_5'>
             
             {% for commentaire in commentaires %}
                     <div class='row commentaries_liste_one'>
                         <div class='col-12 commentaries_liste_one_info'>
                             <h3 class='commentaries_liste_one_user'>{{commentaire.user.username}}</h3>
-                            <P class=''>date de publication: {{commentaire.datePublished.date|date("m/d/Y")}}</p>
+                            <P class='mg_bottom_0'>date de publication: {{commentaire.datePublished.date|date("m/d/Y")}}</p>
                         </div>
                         <p class='col-12 commentaries_liste_one_content'>{{commentaire.content}}</p>
                     </div>
