@@ -26,7 +26,7 @@ class DefaultController extends Controller
 
         return $this->render('@WowNews/Default/accueil.html.twig', array(
             'articles' => $articles,
-            'template' => 'espion',
+           
         ));
     }
 

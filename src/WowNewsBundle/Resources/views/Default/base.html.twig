@@ -18,20 +18,17 @@
 <body class='body_base'>
     {% if template is defined  %}
     {% else %}
-    {% set template = 'horde' %}
+    {% set template = 'guerre' %}
     {% endif %}
-    
 
     <header class='container-fluid'>
-        <div class='header'>
-            {% if template  is defined and (template == 'horde' or template == 'alliance') %}
-            
-            <a href={{path('wow_news_accueil_template', {'template': template})}}>
-                <img class="button_return_accueil" src={{asset('assets/image/logo.png')}} alt="logo"> 
-            </a>
-
-            {% else %}
-                <div class='home_block_button'>
+        <div class='header row justify-content-md-center'>
+            <div class=''>
+                <a href={{path('wow_news_accueil_template', {'template': template})}}>
+                    <img class="button_return_accueil" src={{asset('assets/image/logo.png')}} alt="logo"> 
+                </a>
+            </div>
+                <div class='home_block_button col-12 justify-content-md-center'>
                     <a href="{{path ('wow_news_accueil_template', {'template' : 'horde'})}}">
                         <button type="button" class="btn btn-dark home_bouton color_horde">Horde</button>
                     </a>
@@ -39,7 +36,6 @@
                         <button type="button" class="btn btn-dark home_bouton color_alliance">Alliance</button>
                     </a>
                 </div>
-            {% endif %}
         </div>
         <div>
             {% block carousel %}{% endblock %}
@@ -52,9 +48,15 @@
             <p class='aside_login'>hello {{ app.user.username}}, tu es bien connecté.  </p>
             <div class='aside_gestion_login'>
                 <a class='button_gestion_user' href={{path( "fos_user_security_logout")}}>Déconnexion</a>
+
+                {% if app.user.roles.0 == 'ROLE_ADMIN' %}
+                <a class='button_gestion_user' href={{path( "easyadmin")}}>admin</a>
+                {% else %}
                 <a class='button_gestion_user' href={{path( "fos_user_profile_show")}}>Profile</a>
+                {% endif %}
+
             </div>
-    
+
         {% else %} 
             <div class='aside_gestion_login'>
                 <a class='button_gestion_user' href={{path( "fos_user_security_login")}}>connexion</a>
@@ -66,7 +68,7 @@
 
     <section class='container-fluid section'>
         
-        {% if template  is defined and template == 'horde' %}
+        {% if template  is defined and (template == 'horde' or template == 'guerre') %}
         <div class='template_horde'>
             <div class='banner_horde'>
                     <img class='gif_sylvanas' src= {{ asset('assets/image/sylvanas.gif')}}>
@@ -83,7 +85,7 @@
         {% endif %}
 
         <div
-         {% if template is defined and (template == 'horde') %}
+         {% if template is defined and (template == 'horde' or template == 'guerre') %}
          class ='content_60'
          {% elseif template is defined and template == 'alliance' %}
          class='content_60'
@@ -99,7 +101,7 @@
         
         </div>
 
-        {% if template is defined and template == 'alliance' %}
+        {% if template is defined and (template == 'alliance' or template == 'guerre') %}
         <div class='template_alliance'>
             <div class='banner_alliance'>
                 <img class='gif_sylvanas' src= {{ asset('assets/image/jaina.gif')}}>

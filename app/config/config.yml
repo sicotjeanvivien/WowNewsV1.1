@@ -87,7 +87,8 @@ fos_user:
 
 #EasyAdmin Bundle
 easy_admin:
-   entities:
+    site_name: WowNews
+    entities:
         User:
             class: WowNewsBundle\Entity\User
         Articles:

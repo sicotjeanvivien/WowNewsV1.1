@@ -9,10 +9,10 @@ a{
     background-color: $color_background;
     background-repeat: no-repeat;
     height: 100%;
+    
 }
 
 .section{
-
     display: flex;
     flex-direction: row;
 }
@@ -20,14 +20,14 @@ a{
 .content_60{
     width:60%;
     padding-bottom: 5%;
-    
+    font-size: 1.5em;
 }
 
 .content_100{
     width: 98%;
     margin: 1%;
     padding-bottom: 5%;
-   
+    font-size: 1.5em;
 }
 
 .layout_page{
@@ -38,7 +38,8 @@ a{
     justify-content: center;
     align-items: center;
     height: 100%;
-    background-image: linear-gradient(to top $color_background, $color_background_op);
+    width: 100%;
+    font-size: 0.91em;
     
 }
 
@@ -48,6 +49,7 @@ a{
     color: $color_text;
     justify-content: center;
     align-items: center;
+    
    
 }
 

@@ -167,12 +167,14 @@ a {
 
 .content_60 {
   width: 60%;
-  padding-bottom: 5%; }
+  padding-bottom: 5%;
+  font-size: 1.5em; }
 
 .content_100 {
   width: 98%;
   margin: 1%;
-  padding-bottom: 5%; }
+  padding-bottom: 5%;
+  font-size: 1.5em; }
 
 .layout_page {
   display: flex;
@@ -182,7 +184,8 @@ a {
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-image: linear-gradient(to top #1e1a17, rgba(30, 26, 23, 0)); }
+  width: 100%;
+  font-size: 0.91em; }
 
 .layout_page_login {
   display: flex;
@@ -310,6 +313,10 @@ ASIDE
 .carousel_legend {
   background-color: rgba(0, 0, 0, 0.6); }
 
+.color_title {
+  color: #F9B513;
+  font-size: 2.5em; }
+
 /*********
 ARTICLES
 ********/
@@ -388,7 +395,8 @@ HOME
   width: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-between; }
+  justify-content: space-between;
+  margin: 2%; }
 
 .home_choise {
   font-size: 3.33em;
@@ -398,6 +406,7 @@ HOME
   font-size: 2.33em;
   width: auto;
   border: none;
+  margin: 10%;
   color: #ffffff;
   text-decoration: none; }
 

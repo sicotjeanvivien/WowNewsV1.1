@@ -1,12 +1,12 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 <div class="fos_user_user_show container-fluid">
-<div class='row'>
-    <div class='offset-4 col-4'>
+<div class='row justify-content-md-center'>
+    <div class='col-12'>
         <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
         <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
     </div>
-    <div class='offset-4 col-4'>
+    <div class='col-12 justify-content-md-center'>
         <a class='button_gestion_user' href={{path('fos_user_profile_edit')}}>éditer</a>
         <a class='button_gestion_user' href={{path('fos_user_change_password')}}>changer mot de passe</a>
     </div>
